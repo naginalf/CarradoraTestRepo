@@ -1,0 +1,1282 @@
+{
+  "resourceType": "Bundle",
+  "id": "hcs-report",
+  "meta": {
+    "versionId": "1",
+    "lastUpdated": "2023-09-29T19:55:09.111+00:00",
+    "profile": [ "http://hl7.org/fhir/us/health-care-surveys-reporting/StructureDefinition/hcs-reporting-bundle" ]
+  },
+  "type": "message",
+  "timestamp": "2023-09-29T19:55:09.111+00:00",
+  "entry": [ {
+    "fullUrl": "https://gw.interop.community/Polk4Saffron/data/MessageHeader/a09def9a-43ba-46e2-a4f0-9839aa3bf7be",
+    "resource": {
+      "resourceType": "MessageHeader",
+      "id": "a09def9a-43ba-46e2-a4f0-9839aa3bf7be",
+      "meta": {
+        "versionId": "1",
+        "lastUpdated": "2023-09-29T19:55:09.112+00:00",
+        "profile": [ "http://hl7.org/fhir/us/medmorph/StructureDefinition/us-ph-messageheader" ]
+      },
+      "extension": [ {
+        "url": "http://hl7.org/fhir/us/medmorph/StructureDefinition/us-ph-report-initiation-type",
+        "valueCodeableConcept": {
+          "coding": [ {
+            "system": "http://hl7.org/fhir/us/medmorph/CodeSystem/us-ph-report-initiation-types",
+            "code": "subscription-notification"
+          } ]
+        }
+      } ],
+      "eventCoding": {
+        "system": "http://hl7.org/fhir/us/medmorph/CodeSystem/us-ph-messageheader-message-types",
+        "code": "healthcare-survey-report-message"
+      },
+      "destination": [ {
+        "endpoint": "https://apidevfhir.cdc.gov/Endpoint/dex-endpoint"
+      } ],
+      "sender": {
+        "reference": "https://gw.interop.community/Polk4Saffron/data/Organization/f3e76104-17d9-4ed1-ac35-86ae14ba5d4a"
+      },
+      "source": {
+        "endpoint": "https://gw.interop.community/Polk4Saffron/data"
+      },
+      "reason": {
+        "coding": [ {
+          "system": "http://hl7.org/fhir/us/medmorph/CodeSystem/us-ph-triggerdefinition-namedevents",
+          "code": "encounter-end"
+        } ]
+      },
+      "focus": [ {
+        "reference": "Bundle/6f88c47f-7382-44b5-b089-87c46dab3b87"
+      } ]
+    }
+  }, {
+    "fullUrl": "https://gw.interop.community/Polk4Saffron/data/Bundle/6f88c47f-7382-44b5-b089-87c46dab3b87",
+    "resource": {
+      "resourceType": "Bundle",
+      "id": "6f88c47f-7382-44b5-b089-87c46dab3b87",
+      "meta": {
+        "versionId": "1",
+        "lastUpdated": "2023-09-29T19:55:09.111+00:00",
+        "profile": [ "http://hl7.org/fhir/us/health-care-surveys-reporting/StructureDefinition/hcs-content-bundle" ]
+      },
+      "type": "collection",
+      "timestamp": "2023-09-29T19:55:09.111+00:00",
+      "entry": [ {
+        "fullUrl": "https://gw.interop.community/Polk4Saffron/data/Composition/e547757f-399d-4795-93ac-b436b79b65ce",
+        "resource": {
+          "resourceType": "Composition",
+          "id": "e547757f-399d-4795-93ac-b436b79b65ce",
+          "meta": {
+            "versionId": "1",
+            "lastUpdated": "2023-09-29T19:55:09.111+00:00",
+            "profile": [ "http://hl7.org/fhir/us/health-care-surveys-reporting/StructureDefinition/hcs-composition" ]
+          },
+          "extension": [ {
+            "url": "http://hl7.org/fhir/StructureDefinition/composition-clinicaldocument-versionNumber",
+            "valueString": "1"
+          } ],
+          "identifier": {
+            "value": "e547757f-399d-4795-93ac-b436b79b65ce"
+          },
+          "status": "final",
+          "type": {
+            "coding": [ {
+              "system": "http://loinc.org",
+              "code": "75619-7",
+              "display": "National Health Care Surveys report"
+            } ],
+            "text": "National Health Care Surveys report"
+          },
+          "subject": {
+            "reference": "https://gw.interop.community/Polk4Saffron/data/Patient/brigg-dishman"
+          },
+          "encounter": {
+            "reference": "https://gw.interop.community/Polk4Saffron/data/Encounter/hospital2"
+          },
+          "date": "2023-09-29T19:55:09+00:00",
+          "author": [ {
+            "reference": "https://gw.interop.community/Polk4Saffron/data/Practitioner/mcgucken"
+          } ],
+          "title": "Health Care Survey Report",
+          "section": [ {
+            "code": {
+              "coding": [ {
+                "system": "http://loinc.org",
+                "code": "29299-5",
+                "display": "Reason For Visit Narrative"
+              } ],
+              "text": "Reason For Visit Narrative"
+            },
+            "text": {
+              "status": "additional",
+              "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">No Information</div>"
+            },
+            "entry": [ {
+              "reference": "https://gw.interop.community/Polk4Saffron/data/Encounter/hospital2"
+            } ]
+          }, {
+            "code": {
+              "coding": [ {
+                "system": "http://loinc.org",
+                "code": "11450-4",
+                "display": "Problem list - Reported"
+              } ],
+              "text": "Problem list - Reported"
+            },
+            "text": {
+              "status": "additional",
+              "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Not Generated automatically in this version</div>"
+            },
+            "entry": [ {
+              "reference": "https://gw.interop.community/Polk4Saffron/data/Condition/coronary-artery-disease"
+            }, {
+              "reference": "https://gw.interop.community/Polk4Saffron/data/Condition/parkinson-disease"
+            }, {
+              "reference": "https://gw.interop.community/Polk4Saffron/data/Condition/gram-negative-sepsis"
+            }, {
+              "reference": "https://gw.interop.community/Polk4Saffron/data/Condition/influenza"
+            }, {
+              "reference": "https://gw.interop.community/Polk4Saffron/data/Condition/diabetes-typeII"
+            } ]
+          }, {
+            "code": {
+              "coding": [ {
+                "system": "http://loinc.org",
+                "code": "48765-2",
+                "display": "Allergies and adverse reactions Document"
+              } ],
+              "text": "Allergies and adverse reactions Document"
+            },
+            "text": {
+              "status": "additional",
+              "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Not Generated automatically in this version</div>"
+            },
+            "entry": [ {
+              "reference": "https://gw.interop.community/Polk4Saffron/data/AllergyIntolerance/penicillin"
+            } ]
+          }, {
+            "code": {
+              "coding": [ {
+                "system": "http://loinc.org",
+                "code": "29549-3",
+                "display": "Medication administered Narrative"
+              } ],
+              "text": "Medication administered Narrative"
+            },
+            "text": {
+              "status": "additional",
+              "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Not Generated automatically in this version</div>"
+            },
+            "entry": [ {
+              "reference": "https://gw.interop.community/Polk4Saffron/data/MedicationAdministration/sodium-chloride"
+            } ]
+          }, {
+            "code": {
+              "coding": [ {
+                "system": "http://loinc.org",
+                "code": "10160-0",
+                "display": "History of Medication use Narrative"
+              } ],
+              "text": "History of Medication use Narrative"
+            },
+            "text": {
+              "status": "additional",
+              "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Not Generated automatically in this version</div>"
+            }
+          }, {
+            "code": {
+              "coding": [ {
+                "system": "http://loinc.org",
+                "code": "30954-2",
+                "display": "Relevant diagnostic tests/laboratory data Narrative"
+              } ],
+              "text": "Relevant diagnostic tests/laboratory data Narrative"
+            },
+            "text": {
+              "status": "additional",
+              "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Not Generated automatically in this version</div>"
+            },
+            "entry": [ {
+              "reference": "https://gw.interop.community/Polk4Saffron/data/Observation/influenza"
+            } ]
+          }, {
+            "code": {
+              "coding": [ {
+                "system": "http://loinc.org",
+                "code": "28650-0",
+                "display": "Clinical notes and chart sections Set"
+              } ],
+              "text": "Clinical notes and chart sections Set"
+            },
+            "text": {
+              "status": "additional",
+              "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Not Generated automatically in this version</div>"
+            }
+          }, {
+            "code": {
+              "coding": [ {
+                "system": "http://loinc.org",
+                "code": "18776-5",
+                "display": "Plan of care note"
+              } ],
+              "text": "Plan of care note"
+            },
+            "text": {
+              "status": "additional",
+              "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Not Generated automatically in this version</div>"
+            },
+            "entry": [ {
+              "reference": "https://gw.interop.community/Polk4Saffron/data/MedicationRequest/aspirin"
+            }, {
+              "reference": "https://gw.interop.community/Polk4Saffron/data/MedicationRequest/carbidopa-levodopa"
+            }, {
+              "reference": "https://gw.interop.community/Polk4Saffron/data/MedicationRequest/metformin"
+            } ]
+          }, {
+            "code": {
+              "coding": [ {
+                "system": "http://loinc.org",
+                "code": "11369-6",
+                "display": "History of Immunization Narrative"
+              } ],
+              "text": "History of Immunization Narrative"
+            },
+            "text": {
+              "status": "additional",
+              "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Not Generated automatically in this version</div>"
+            }
+          }, {
+            "code": {
+              "coding": [ {
+                "system": "http://loinc.org",
+                "code": "47519-4",
+                "display": "History of Procedures Document"
+              } ],
+              "text": "History of Procedures Document"
+            },
+            "text": {
+              "status": "additional",
+              "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Not Generated automatically in this version</div>"
+            },
+            "entry": [ {
+              "reference": "https://gw.interop.community/Polk4Saffron/data/Procedure/chest-x-ray"
+            } ]
+          }, {
+            "code": {
+              "coding": [ {
+                "system": "http://loinc.org",
+                "code": "8716-3",
+                "display": "Vital signs"
+              } ],
+              "text": "Vital signs"
+            },
+            "text": {
+              "status": "additional",
+              "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Not Generated automatically in this version</div>"
+            }
+          }, {
+            "code": {
+              "coding": [ {
+                "system": "http://loinc.org",
+                "code": "46264-8",
+                "display": "History of medical device use"
+              } ],
+              "text": "History of medical device use"
+            },
+            "text": {
+              "status": "additional",
+              "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Not Generated automatically in this version</div>"
+            }
+          }, {
+            "code": {
+              "coding": [ {
+                "system": "http://loinc.org",
+                "code": "85847-2",
+                "display": "Patient Care team information"
+              } ],
+              "text": "Patient Care team information"
+            },
+            "text": {
+              "status": "additional",
+              "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Not Generated automatically in this version</div>"
+            }
+          }, {
+            "code": {
+              "coding": [ {
+                "system": "http://loinc.org",
+                "code": "61146-7",
+                "display": "Goals Narrative"
+              } ],
+              "text": "Goals Narrative"
+            },
+            "text": {
+              "status": "additional",
+              "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Not Generated automatically in this version</div>"
+            }
+          } ]
+        }
+      }, {
+        "fullUrl": "https://gw.interop.community/Polk4Saffron/data/Practitioner/mcgucken",
+        "resource": {
+          "resourceType": "Practitioner",
+          "id": "mcgucken",
+          "meta": {
+            "versionId": "1",
+            "lastUpdated": "2023-09-27T20:09:14.000+00:00",
+            "source": "#lKxPsVZ2CtviWMl6",
+            "profile": [ "http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner" ]
+          },
+          "text": {
+            "status": "generated",
+            "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Francois McGucken</div>"
+          },
+          "identifier": [ {
+            "system": "http://hl7.org.fhir/sid/us-npi",
+            "value": "2223334444"
+          } ],
+          "active": true,
+          "name": [ {
+            "family": "McGuken",
+            "given": [ "Francois" ],
+            "suffix": [ "MD" ]
+          } ]
+        }
+      }, {
+        "fullUrl": "https://gw.interop.community/Polk4Saffron/data/AllergyIntolerance/penicillin",
+        "resource": {
+          "resourceType": "AllergyIntolerance",
+          "id": "penicillin",
+          "meta": {
+            "versionId": "2",
+            "lastUpdated": "2023-09-27T20:16:01.000+00:00",
+            "source": "#jlbRefFFZr8g3dDd",
+            "profile": [ "http://hl7.org/fhir/us/core/StructureDefinition/us-core-allergyintolerance" ]
+          },
+          "text": {
+            "status": "extensions",
+            "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Narrative</b></p><p><b>id</b>: example</p><p><b>meta</b>: </p><p><b>clinicalStatus</b>: <span title=\"Codes: {http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical active}\">Active</span></p><p><b>verificationStatus</b>: <span title=\"Codes: {http://terminology.hl7.org/CodeSystem/allergyintolerance-verification confirmed}\">Confirmed</span></p><p><b>category</b>: medication</p><p><b>criticality</b>: high</p><p><b>code</b>: <span title=\"Codes: {http://snomed.info/sct 372598006}\">Penicillinase-sensitive penicillin</span></p><p><b>patient</b>: <a href=\"Patient-example.html\">Brigg Dishman. Generated Summary: id: example; Medical Record Number: 4399469315; active; Brigg Dishman ; ph: 616-676-5017, zdoyc@nymag.com; gender: female; birthDate: 1954-03-22</a></p><h3>Reactions</h3><table class=\"grid\"><tr><td>-</td><td><b>Manifestation</b></td><td><b>Severity</b></td></tr><tr><td>*</td><td><span title=\"Codes: {http://snomed.info/sct 139684003}\">Rash</span></td><td>mild</td></tr></table></div>"
+          },
+          "clinicalStatus": {
+            "coding": [ {
+              "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
+              "code": "active"
+            } ]
+          },
+          "verificationStatus": {
+            "coding": [ {
+              "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-verification",
+              "code": "confirmed"
+            } ]
+          },
+          "category": [ "medication" ],
+          "criticality": "high",
+          "code": {
+            "coding": [ {
+              "system": "http://snomed.info/sct",
+              "code": "372598006",
+              "display": "Penicillinase-sensitive penicillin"
+            } ],
+            "text": "Penicillinase-sensitive penicillin"
+          },
+          "patient": {
+            "reference": "Patient/brigg-dishman"
+          },
+          "reaction": [ {
+            "manifestation": [ {
+              "coding": [ {
+                "system": "http://snomed.info/sct",
+                "code": "271807003",
+                "display": "Rash"
+              } ],
+              "text": "Rash"
+            } ],
+            "severity": "mild"
+          } ]
+        }
+      }, {
+        "fullUrl": "https://gw.interop.community/Polk4Saffron/data/MedicationAdministration/sodium-chloride",
+        "resource": {
+          "resourceType": "MedicationAdministration",
+          "id": "sodium-chloride",
+          "meta": {
+            "versionId": "2",
+            "lastUpdated": "2023-09-28T15:31:59.000+00:00",
+            "source": "#9p2Solp6iGoYGJUn",
+            "profile": [ "http://hl7.org/fhir/us/health-care-surveys-reporting/StructureDefinition/hcs-medicationadministration" ]
+          },
+          "text": {
+            "status": "extensions",
+            "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Infuse 1mL per hour for 5 hours for 48 hours in the right forearm starting 5 hours after admission</b></p></div>"
+          },
+          "status": "completed",
+          "medicationCodeableConcept": {
+            "coding": [ {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "313002",
+              "display": "sodium chloride 9 MG/ML Injectable Solution"
+            } ]
+          },
+          "subject": {
+            "reference": "Patient/brigg-dishman"
+          },
+          "context": {
+            "reference": "Encounter/hospital2"
+          },
+          "effectivePeriod": {
+            "start": "2023-08-21T13:00:00+01:00",
+            "end": "2023-08-23T18:00:00+01:00"
+          },
+          "performer": [ {
+            "actor": {
+              "reference": "Practitioner/mcgucken"
+            }
+          } ],
+          "dosage": {
+            "text": "Infuse 1mL per hour for 5 hours for 48 hours in the right forearm starting 5 hours after admission",
+            "site": {
+              "coding": [ {
+                "system": "http://snomed.info/sct",
+                "code": "64262003",
+                "display": "Right forearm"
+              } ]
+            },
+            "route": {
+              "coding": [ {
+                "system": "http://snomed.info/sct",
+                "code": "255560000",
+                "display": "Intravenous"
+              } ]
+            },
+            "dose": {
+              "value": 5,
+              "unit": "mL/h",
+              "system": "http://unitsofmeasure.org",
+              "code": "mL/h"
+            },
+            "rateRatio": {
+              "numerator": {
+                "value": 1,
+                "unit": "mL",
+                "system": "http://unitsofmeasure.org",
+                "code": "mL"
+              },
+              "denominator": {
+                "value": 1,
+                "unit": "h",
+                "system": "http://unitsofmeasure.org",
+                "code": "h"
+              }
+            }
+          }
+        }
+      }, {
+        "fullUrl": "https://gw.interop.community/Polk4Saffron/data/Condition/parkinson-disease",
+        "resource": {
+          "resourceType": "Condition",
+          "id": "parkinson-disease",
+          "meta": {
+            "versionId": "1",
+            "lastUpdated": "2023-09-27T20:13:36.000+00:00",
+            "source": "#DEMGmhijygjWBQy5",
+            "profile": [ "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition" ]
+          },
+          "text": {
+            "status": "extensions",
+            "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Narrative</b></p><p><b>id</b>: example</p><p><b>meta</b>: </p><p><b>clinicalStatus</b>: <span title=\"Codes: {http://terminology.hl7.org/CodeSystem/condition-clinical active}\">Active</span></p><p><b>verificationStatus</b>: <span title=\"Codes: {http://terminology.hl7.org/CodeSystem/condition-ver-status confirmed}\">Confirmed</span></p><p><b>category</b>: <span title=\"Codes: {http://terminology.hl7.org/CodeSystem/condition-category problem-list-item}\">Problem</span></p><p><b>code</b>: <span title=\"Codes: {http://snomed.info/sct 49049000}\">Parkinson's disease</span></p><p><b>subject</b>: Brigg Dishman. Generated Summary: Medical Record Number: 1428982; active; Brigg Dishman; ph: 619-555-1469; gender: male; birthDate: 1938-03-22</p><p><b>onset</b>: 2021-08-21</p></div>"
+          },
+          "clinicalStatus": {
+            "coding": [ {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            } ],
+            "text": "Active"
+          },
+          "verificationStatus": {
+            "coding": [ {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            } ],
+            "text": "Confirmed"
+          },
+          "category": [ {
+            "coding": [ {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+              "code": "problem-list-item",
+              "display": "Problem List Item"
+            } ],
+            "text": "Problem List Item"
+          } ],
+          "code": {
+            "coding": [ {
+              "system": "http://snomed.info/sct",
+              "code": "49049000",
+              "display": "Parkinson's disease"
+            } ],
+            "text": "Parkinson's disease"
+          },
+          "subject": {
+            "reference": "Patient/brigg-dishman"
+          },
+          "onsetDateTime": "2021-08-21"
+        }
+      }, {
+        "fullUrl": "https://gw.interop.community/Polk4Saffron/data/Patient/brigg-dishman",
+        "resource": {
+          "resourceType": "Patient",
+          "id": "brigg-dishman",
+          "meta": {
+            "versionId": "1",
+            "lastUpdated": "2023-09-27T20:09:42.000+00:00",
+            "source": "#MyPq9zTWApCBvIhe",
+            "profile": [ "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient" ]
+          },
+          "text": {
+            "status": "extensions",
+            "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Narrative</b></p><p><b>id</b>: example</p><p><b>meta</b>: </p><p><b>identifier</b>: Medical Record Number: 1428982 </p><p><b>active</b>: true</p><p><b>name</b>: Brigg Dishman</p><p><b>telecom</b>: ph: 619-555-1469</p><p><b>gender</b>: male</p><p><b>birthDate</b>: 1938-03-22</p><p><b>address</b>: 9 Eliot Parkway Indianapolis IN 46207</p></div>"
+          },
+          "extension": [ {
+            "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-race",
+            "extension": [ {
+              "url": "ombCategory",
+              "valueCoding": {
+                "system": "urn:oid:2.16.840.1.113883.6.238",
+                "code": "2106-3",
+                "display": "White"
+              }
+            }, {
+              "url": "text",
+              "valueString": "White"
+            } ]
+          }, {
+            "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity",
+            "extension": [ {
+              "url": "ombCategory",
+              "valueCoding": {
+                "system": "urn:oid:2.16.840.1.113883.6.238",
+                "code": "2186-5",
+                "display": "Not Hispanic or Latino"
+              }
+            }, {
+              "url": "text",
+              "valueString": "Not Hispanic or Latino"
+            } ]
+          }, {
+            "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex",
+            "valueCode": "M"
+          } ],
+          "identifier": [ {
+            "use": "usual",
+            "type": {
+              "coding": [ {
+                "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                "code": "MR",
+                "display": "Medical Record Number"
+              } ],
+              "text": "Medical Record Number"
+            },
+            "system": "http://hospital.smarthealthit.org",
+            "value": "1428982"
+          } ],
+          "active": true,
+          "name": [ {
+            "family": "Dishman",
+            "given": [ "Brigg", "Halethorp" ],
+            "suffix": [ "Jr" ]
+          } ],
+          "telecom": [ {
+            "system": "phone",
+            "value": "619-555-1469",
+            "use": "mobile"
+          } ],
+          "gender": "male",
+          "birthDate": "1938-03-22",
+          "address": [ {
+            "use": "home",
+            "line": [ "9 Eliot Parkway" ],
+            "city": "Indianapolis",
+            "state": "IN",
+            "postalCode": "46207",
+            "country": "US"
+          } ],
+          "maritalStatus": {
+            "coding": [ {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-MaritalStatus",
+              "code": "S",
+              "display": "Never Married"
+            } ]
+          },
+          "communication": [ {
+            "language": {
+              "coding": [ {
+                "system": "urn:ietf:bcp:47",
+                "code": "en-US",
+                "display": "English (United States)"
+              } ]
+            },
+            "preferred": true
+          } ],
+          "generalPractitioner": [ {
+            "reference": "Practitioner/mcgucken"
+          } ]
+        }
+      }, {
+        "fullUrl": "https://gw.interop.community/Polk4Saffron/data/Procedure/chest-x-ray",
+        "resource": {
+          "resourceType": "Procedure",
+          "id": "chest-x-ray",
+          "meta": {
+            "versionId": "2",
+            "lastUpdated": "2023-09-28T15:27:52.000+00:00",
+            "source": "#IsM95VZ88WpgYRH5",
+            "profile": [ "http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure" ]
+          },
+          "text": {
+            "status": "generated",
+            "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><p><b>id</b>: chest-x-ray</p><p><b>meta</b>: </p><p><b>status</b>: completed</p><p><b>code</b>: <span title=\"Codes: {http://snomed.info/sct 399208008}\">Plain chest X-ray</span></p><p><b>subject</b>: Brigg Dishman. Generated Summary:  Medical Record Number: 1428982; active; Brigg Dishman; ph: 619-555-1469; gender: male; birthDate: 1938-03-22</p><p><b>performed</b>: 2023-08-21</p><p><b>Performer</b>:Francois McGucken, MD</p></div>"
+          },
+          "status": "completed",
+          "code": {
+            "coding": [ {
+              "system": "http://snomed.info/sct",
+              "code": "399208008"
+            } ],
+            "text": "Plain chest X-ray"
+          },
+          "subject": {
+            "reference": "Patient/brigg-dishman"
+          },
+          "encounter": {
+            "reference": "Encounter/hospital2"
+          },
+          "performedPeriod": {
+            "start": "2023-08-21T12:55:26-07:00",
+            "end": "2023-08-21T13:25:26-07:00"
+          },
+          "performer": [ {
+            "actor": {
+              "reference": "Practitioner/mcgucken"
+            }
+          } ],
+          "reasonCode": [ {
+            "coding": [ {
+              "system": "http://snomed.info/sct",
+              "code": "49727002"
+            } ],
+            "text": "Cough"
+          } ],
+          "outcome": {
+            "coding": [ {
+              "system": "http://snomed.info/sct",
+              "code": "367542003"
+            } ],
+            "text": "Pulmonary eosinophilia - infiltrates in the lower lobes bilaterally"
+          }
+        }
+      }, {
+        "fullUrl": "https://gw.interop.community/Polk4Saffron/data/MedicationRequest/carbidopa-levodopa",
+        "resource": {
+          "resourceType": "MedicationRequest",
+          "id": "carbidopa-levodopa",
+          "meta": {
+            "versionId": "2",
+            "lastUpdated": "2023-09-28T15:29:58.000+00:00",
+            "source": "#ky7oV5xKWPJABpe1",
+            "profile": [ "http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest" ]
+          },
+          "text": {
+            "status": "generated",
+            "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><p><b>id</b>: carbidopa-levodopa</p><p><b>meta</b>: </p><p><b>status</b>: active</p><p><b>intent</b>: order</p><p><b>medication</b>: RxNorm Code: 724606 carbidopa 10 MG / levodopa 100 MG Oral Tablet [Sinemet]</p><p><b>subject</b>: Brigg Dishman. Generated Summary:  Medical Record Number: 1428982; active; Brigg Dishman; ph: 619-555-1469; gender: male; birthDate: 1938-03-22</p><p><b>authoredOn</b>: 2023-08-26</p><p><b>requester</b>: Francois McGucken, MD.</p></div>"
+          },
+          "status": "active",
+          "intent": "order",
+          "category": [ {
+            "coding": [ {
+              "system": "http://terminology.hl7.org/CodeSystem/medicationrequest-category",
+              "code": "discharge",
+              "display": "Discharge"
+            } ],
+            "text": "Discharge Medication"
+          } ],
+          "medicationCodeableConcept": {
+            "coding": [ {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "724606",
+              "display": "carbidopa 10 MG / levodopa 100 MG Oral Tablet [Sinemet]"
+            } ],
+            "text": "carbidopa 10 MG / levodopa 100 MG Oral Tablet [Sinemet]"
+          },
+          "subject": {
+            "reference": "Patient/brigg-dishman"
+          },
+          "encounter": {
+            "reference": "Encounter/hospital2"
+          },
+          "authoredOn": "2023-08-26",
+          "requester": {
+            "reference": "Practitioner/mcgucken"
+          },
+          "dosageInstruction": [ {
+            "text": "3 tablets per day",
+            "timing": {
+              "repeat": {
+                "frequency": 1,
+                "period": 1,
+                "periodUnit": "d"
+              }
+            },
+            "route": {
+              "coding": [ {
+                "system": "http://snomed.info/sct",
+                "code": "26643006",
+                "display": "Oral use"
+              } ]
+            }
+          } ],
+          "dispenseRequest": {
+            "numberOfRepeatsAllowed": 1,
+            "quantity": {
+              "value": 3,
+              "unit": "{tbl}",
+              "system": "http://unitsofmeasure.org",
+              "code": "{tbl}"
+            },
+            "expectedSupplyDuration": {
+              "value": 30,
+              "unit": "days",
+              "system": "http://unitsofmeasure.org",
+              "code": "d"
+            }
+          }
+        }
+      }, {
+        "fullUrl": "https://gw.interop.community/Polk4Saffron/data/MedicationRequest/metformin",
+        "resource": {
+          "resourceType": "MedicationRequest",
+          "id": "metformin",
+          "meta": {
+            "versionId": "2",
+            "lastUpdated": "2023-09-28T15:29:25.000+00:00",
+            "source": "#3anxKL4cZNnPoXz4",
+            "profile": [ "http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest" ]
+          },
+          "text": {
+            "status": "generated",
+            "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><p><b>id</b>: metformin</p><p><b>meta</b>: </p><p><b>status</b>: active</p><p><b>intent</b>: order</p><p><b>medication</b>: <span title=\"Codes: {http://www.nlm.nih.gov/research/umls/rxnorm 861007}\">metformin hydrochloride 500 MG Oral Tablet</span></p><p><b>subject</b>: Brigg Dishman. Generated Summary:  Medical Record Number: 1428982; active; Brigg Dishman; ph: 619-555-1469; gender: male; birthDate: 1938-03-22</p><p><b>authoredOn</b>: 2023-08-26</p><p><b>requester</b>: Francois McGucken, MD.</p><p><b>dosageInstruction</b>: </p><h3>DispenseRequests</h3><table class=\"grid\"><tr><td>-</td><td><b>NumberOfRepeatsAllowed</b></td><td><b>Quantity</b></td><td><b>ExpectedSupplyDuration</b></td></tr><tr><td>*</td><td>1</td><td>1 tab</td><td>30 days</td></tr></table></div>"
+          },
+          "status": "active",
+          "intent": "order",
+          "category": [ {
+            "coding": [ {
+              "system": "http://terminology.hl7.org/CodeSystem/medicationrequest-category",
+              "code": "discharge",
+              "display": "Discharge"
+            } ],
+            "text": "Discharge Medication"
+          } ],
+          "medicationCodeableConcept": {
+            "coding": [ {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "861007",
+              "display": "metformin hydrochloride 500 MG Oral Tablet"
+            } ],
+            "text": "metformin hydrochloride 500 MG Oral Tablet"
+          },
+          "subject": {
+            "reference": "Patient/brigg-dishman"
+          },
+          "encounter": {
+            "reference": "Encounter/hospital2"
+          },
+          "authoredOn": "2023-08-26",
+          "requester": {
+            "reference": "Practitioner/mcgucken"
+          },
+          "dosageInstruction": [ {
+            "text": "1 tablet per day for 30 days",
+            "timing": {
+              "repeat": {
+                "boundsPeriod": {
+                  "start": "2023-08-26",
+                  "end": "2023-09-24"
+                }
+              }
+            }
+          } ],
+          "dispenseRequest": {
+            "numberOfRepeatsAllowed": 1,
+            "quantity": {
+              "value": 1,
+              "unit": "{tbl}",
+              "system": "http://unitsofmeasure.org",
+              "code": "{tbl}"
+            },
+            "expectedSupplyDuration": {
+              "value": 30,
+              "unit": "days",
+              "system": "http://unitsofmeasure.org",
+              "code": "d"
+            }
+          }
+        }
+      }, {
+        "fullUrl": "https://gw.interop.community/Polk4Saffron/data/Condition/coronary-artery-disease",
+        "resource": {
+          "resourceType": "Condition",
+          "id": "coronary-artery-disease",
+          "meta": {
+            "versionId": "1",
+            "lastUpdated": "2023-09-27T20:14:42.000+00:00",
+            "source": "#x2NCikizGHo5K8cV",
+            "profile": [ "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition" ]
+          },
+          "text": {
+            "status": "extensions",
+            "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Narrative</b></p><p><b>id</b>: coronary-artery-disease</p><p><b>meta</b>: </p><p><b>clinicalStatus</b>: <span title=\"Codes: {http://terminology.hl7.org/CodeSystem/condition-clinical active}\">Active</span></p><p><b>verificationStatus</b>: <span title=\"Codes: {http://terminology.hl7.org/CodeSystem/condition-ver-status confirmed}\">Confirmed</span></p><p><b>category</b>: <span title=\"Codes: {http://terminology.hl7.org/CodeSystem/condition-category problem-list-item}\">Problem</span></p><p><b>code</b>: <span title=\"Codes: {http://snomed.info/sct 53741008}\">CAD - Coronary artery disease</span></p><p><b>subject</b>: Brigg Dishman. Generated Summary: Medical Record Number: 1428982; active; Brigg Dishman; ph: 619-555-1469; gender: male; birthDate: 1938-03-22</p><p><b>onset</b>: 2019-08-19</p></div>"
+          },
+          "clinicalStatus": {
+            "coding": [ {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            } ],
+            "text": "Active"
+          },
+          "verificationStatus": {
+            "coding": [ {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            } ],
+            "text": "Confirmed"
+          },
+          "category": [ {
+            "coding": [ {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+              "code": "problem-list-item",
+              "display": "Problem List Item"
+            } ],
+            "text": "Problem List Item"
+          } ],
+          "code": {
+            "coding": [ {
+              "system": "http://snomed.info/sct",
+              "code": "53741008",
+              "display": "CAD - Coronary artery disease"
+            } ],
+            "text": "CAD - Coronary artery disease"
+          },
+          "subject": {
+            "reference": "Patient/brigg-dishman"
+          },
+          "onsetDateTime": "2019-08-19"
+        }
+      }, {
+        "fullUrl": "https://gw.interop.community/Polk4Saffron/data/MedicationRequest/aspirin",
+        "resource": {
+          "resourceType": "MedicationRequest",
+          "id": "aspirin",
+          "meta": {
+            "versionId": "2",
+            "lastUpdated": "2023-09-28T15:28:44.000+00:00",
+            "source": "#it0p3vzCIyNM5GVy",
+            "profile": [ "http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest" ]
+          },
+          "text": {
+            "status": "generated",
+            "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><p><b>id</b>: aspirin</p><p><b>meta</b>: </p><p><b>status</b>: active</p><p><b>intent</b>: order</p><p><b>medication</b>: <span title=\"Codes: {http://www.nlm.nih.gov/research/umls/rxnorm 724444}\">aspirin 81 MG Oral Tablet [Anacin Aspirin Regimen]</span></p><p><b>subject</b>: Brigg Dishman. Generated Summary:  Medical Record Number: 1428982; active; Brigg Dishman; ph: 619-555-1469; gender: male; birthDate: 1938-03-22</p><p><b>authoredOn</b>: 2023-08-26</p><p><b>requester</b>: Francois McGucken, MD.</p><p><b>dosageInstruction</b>: </p><h3>DispenseRequests</h3><table class=\"grid\"><tr><td>-</td><td><b>NumberOfRepeatsAllowed</b></td><td><b>Quantity</b></td><td><b>ExpectedSupplyDuration</b></td></tr><tr><td>*</td><td>1</td><td>1 tab</td><td>30 days</td></tr></table></div>"
+          },
+          "status": "active",
+          "intent": "order",
+          "category": [ {
+            "coding": [ {
+              "system": "http://terminology.hl7.org/CodeSystem/medicationrequest-category",
+              "code": "discharge",
+              "display": "Discharge"
+            } ],
+            "text": "Discharge Medication"
+          } ],
+          "medicationCodeableConcept": {
+            "coding": [ {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "724444",
+              "display": "aspirin 81 MG Oral Tablet [Anacin Aspirin Regimen]"
+            } ],
+            "text": "aspirin 81 MG Oral Tablet [Anacin Aspirin Regimen]"
+          },
+          "subject": {
+            "reference": "Patient/brigg-dishman"
+          },
+          "encounter": {
+            "reference": "Encounter/hospital2"
+          },
+          "authoredOn": "2023-08-26",
+          "requester": {
+            "reference": "Practitioner/mcgucken"
+          },
+          "dosageInstruction": [ {
+            "text": "1 tablet per day",
+            "timing": {
+              "repeat": {
+                "boundsPeriod": {
+                  "start": "2023-08-26",
+                  "end": "2023-09-24"
+                }
+              }
+            }
+          } ],
+          "dispenseRequest": {
+            "numberOfRepeatsAllowed": 1,
+            "quantity": {
+              "value": 1,
+              "unit": "{tbl}",
+              "system": "http://unitsofmeasure.org",
+              "code": "{tbl}"
+            },
+            "expectedSupplyDuration": {
+              "value": 30,
+              "unit": "days",
+              "system": "http://unitsofmeasure.org",
+              "code": "d"
+            }
+          }
+        }
+      }, {
+        "fullUrl": "https://gw.interop.community/Polk4Saffron/data/Encounter/hospital2",
+        "resource": {
+          "resourceType": "Encounter",
+          "id": "hospital2",
+          "meta": {
+            "versionId": "2",
+            "lastUpdated": "2023-09-28T18:56:27.000+00:00",
+            "source": "#ojuenCdIuqBmrxKt",
+            "profile": [ "http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter" ]
+          },
+          "text": {
+            "status": "extensions",
+            "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Narrative</b></p><p><b>id</b>: hospital</p><p><b>status</b>: finished</p><p><b>class</b>: inpatient</p><p><b>type</b>: Initial hospital visit by physician</p><p><b>subject</b>: Brigg Dishman,  Medical Record Number: 1428982; ph: 619-555-1469; gender: male; birthDate: 1938-03-22</p><p><b>period</b>: 08/21/2023; 08/26/2023</p></div>"
+          },
+          "identifier": [ {
+            "system": "http://hospital.smarthealthit.org",
+            "value": "3829921793147"
+          } ],
+          "status": "finished",
+          "class": {
+            "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+            "code": "IMP",
+            "display": "inpatient encounter"
+          },
+          "type": [ {
+            "coding": [ {
+              "system": "http://snomed.info/sct",
+              "code": "69399002",
+              "display": "Initial hospital visit by physician"
+            } ],
+            "text": "Initial hospital visit by physician"
+          } ],
+          "subject": {
+            "reference": "Patient/brigg-dishman"
+          },
+          "participant": [ {
+            "type": [ {
+              "coding": [ {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
+                "code": "PPRF",
+                "display": "primary performer"
+              } ]
+            } ],
+            "period": {
+              "start": "2023-08-21T17:30:14-05:00",
+              "end": "2023-08-26T17:30:14-05:00"
+            },
+            "individual": {
+              "reference": "Practitioner/mcgucken"
+            }
+          } ],
+          "period": {
+            "start": "2023-08-21T08:00:00-05:00",
+            "end": "2023-08-26T18:00:14-05:00"
+          },
+          "reasonCode": [ {
+            "coding": [ {
+              "system": "http://snomed.info/sct",
+              "code": "364006",
+              "display": "Acute left-sided heart failure"
+            } ]
+          } ],
+          "hospitalization": {
+            "dischargeDisposition": {
+              "coding": [ {
+                "system": "http://terminology.hl7.org/CodeSystem/discharge-disposition",
+                "code": "snf",
+                "display": "Skilled nursing facility"
+              } ],
+              "text": "The patient has been discharged to a skilled nursing facility for the patient to receive additional care."
+            }
+          }
+        }
+      }, {
+        "fullUrl": "https://gw.interop.community/Polk4Saffron/data/Condition/gram-negative-sepsis",
+        "resource": {
+          "resourceType": "Condition",
+          "id": "gram-negative-sepsis",
+          "meta": {
+            "versionId": "2",
+            "lastUpdated": "2023-09-28T15:22:37.000+00:00",
+            "source": "#4mDLfmbaR0SEnEcF",
+            "profile": [ "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition" ]
+          },
+          "text": {
+            "status": "extensions",
+            "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Narrative</b></p><p><b>id</b>: example</p><p><b>meta</b>: </p><p><b>clinicalStatus</b>: <span title=\"Codes: {http://terminology.hl7.org/CodeSystem/condition-clinical active}\">Active</span></p><p><b>verificationStatus</b>: <span title=\"Codes: {http://terminology.hl7.org/CodeSystem/condition-ver-status confirmed}\">Confirmed</span></p><p><b>category</b>: <span title=\"Codes: {http://terminology.hl7.org/CodeSystem/condition-category encounter-diagnosis}\">Problem</span></p><p><b>code</b>: <span title=\"Codes: {http://hl7.org/fhir/sid/icd-10 A41.50}\">Gram negative sepsis</span></p><p><b>subject</b>: Brigg Dishman. Generated Summary: Medical Record Number: 1428982; active; Brigg Dishman; ph: 619-555-1469; gender: male; birthDate: 1938-03-22</p><p><b>onset</b>: 2023-08-21</p></div>"
+          },
+          "clinicalStatus": {
+            "coding": [ {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            } ],
+            "text": "Active"
+          },
+          "verificationStatus": {
+            "coding": [ {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            } ],
+            "text": "Confirmed"
+          },
+          "category": [ {
+            "coding": [ {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+              "code": "encounter-diagnosis",
+              "display": "Encounter Diagnosis"
+            } ],
+            "text": "Encounter Diagnosis"
+          } ],
+          "code": {
+            "coding": [ {
+              "system": "https://terminology.hl7.org/5.0.0/CodeSystem-icd10CM.html",
+              "code": "A41.50",
+              "display": "Gram-negative sepsis, unspecified"
+            } ],
+            "text": "Gram-negative sepsis, unspecified"
+          },
+          "subject": {
+            "reference": "Patient/brigg-dishman"
+          },
+          "encounter": {
+            "reference": "Encounter/hospital2"
+          },
+          "onsetDateTime": "2023-08-21"
+        }
+      }, {
+        "fullUrl": "https://gw.interop.community/Polk4Saffron/data/Observation/influenza",
+        "resource": {
+          "resourceType": "Observation",
+          "id": "influenza",
+          "meta": {
+            "versionId": "5",
+            "lastUpdated": "2023-09-28T16:23:08.000+00:00",
+            "source": "#RJaAUpk7pidNJykK",
+            "profile": [ "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab" ]
+          },
+          "text": {
+            "status": "generated",
+            "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><p><b>id</b>: flu</p><p><b>meta</b>: </p><p/><p><b>category</b>: <span title=\"Codes: {http://terminology.hl7.org/CodeSystem/observation-category laboratory}\">Laboratory</span></p><p><b>code</b>: <span title=\"Codes: {http://loinc.org 85476-0}\">FLUAV+FLUBV+RSV RNA pnl Up resp NAA+pr</span></p><p><b>subject</b>: Brigg Dishman. Generated Summary:  Medical Record Number: 1428982; active; Brigg Dishman; ph: 619-555-1469; gender: male; birthDate: 1938-03-22</p><p><b>effective</b>: 2023-08-23</p><p><b>value</b>: positive</p></div>"
+          },
+          "status": "final",
+          "category": [ {
+            "coding": [ {
+              "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+              "code": "laboratory",
+              "display": "Laboratory"
+            } ],
+            "text": "Laboratory"
+          } ],
+          "code": {
+            "coding": [ {
+              "system": "http://loinc.org",
+              "code": "85476-0",
+              "display": "Influenza virus A and B and Respiratory syncytial virus RNA panel - Upper respiratory specimen by NAA with probe detection"
+            } ],
+            "text": "Influenza virus A and B and Respiratory syncytial virus RNA panel - Upper respiratory specimen by NAA with probe detection"
+          },
+          "subject": {
+            "reference": "Patient/brigg-dishman"
+          },
+          "encounter": {
+            "reference": "Encounter/hospital2"
+          },
+          "effectiveDateTime": "2023-08-23",
+          "valueCodeableConcept": {
+            "coding": [ {
+              "system": "http://snomed.info/sct",
+              "code": "260373001",
+              "display": "Detected"
+            } ]
+          }
+        }
+      }, {
+        "fullUrl": "https://gw.interop.community/Polk4Saffron/data/Condition/influenza",
+        "resource": {
+          "resourceType": "Condition",
+          "id": "influenza",
+          "meta": {
+            "versionId": "2",
+            "lastUpdated": "2023-09-28T15:21:35.000+00:00",
+            "source": "#JXKSpTfQ7l3MxTot",
+            "profile": [ "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition" ]
+          },
+          "text": {
+            "status": "extensions",
+            "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Narrative</b></p><p><b>id</b>: example</p><p><b>meta</b>: </p><p><b>clinicalStatus</b>: <span title=\"Codes: {http://terminology.hl7.org/CodeSystem/condition-clinical active}\">Active</span></p><p><b>verificationStatus</b>: <span title=\"Codes: {http://terminology.hl7.org/CodeSystem/condition-ver-status confirmed}\">Confirmed</span></p><p><b>category</b>: <span title=\"Codes: {http://terminology.hl7.org/CodeSystem/condition-category encounter-diagnosis}\">Problem</span></p><p><b>code</b>: <span title=\"Codes: {http://hl7.org/fhir/sid/icd-10 J10.0}\">Influenza due to other specified identified influenza with unspecified type of pneumonia</span></p><p><b>subject</b>: Brigg Dishman. Generated Summary: Medical Record Number: 1428982; active; Brigg Dishman; ph: 619-555-1469; gender: male; birthDate: 1938-03-22</p><p><b>onset</b>: 2023-08-21</p></div>"
+          },
+          "clinicalStatus": {
+            "coding": [ {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            } ],
+            "text": "Active"
+          },
+          "verificationStatus": {
+            "coding": [ {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            } ],
+            "text": "Confirmed"
+          },
+          "category": [ {
+            "coding": [ {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+              "code": "encounter-diagnosis",
+              "display": "Encounter Diagnosis"
+            } ],
+            "text": "Encounter Diagnosis"
+          } ],
+          "code": {
+            "coding": [ {
+              "system": "http://snomed.info/sct",
+              "code": "6142004",
+              "display": "Influenza (disorder)"
+            } ],
+            "text": "Influenza (disorder)"
+          },
+          "subject": {
+            "reference": "Patient/brigg-dishman"
+          },
+          "encounter": {
+            "reference": "Encounter/hospital2"
+          },
+          "onsetDateTime": "2023-08-21"
+        }
+      }, {
+        "fullUrl": "https://gw.interop.community/Polk4Saffron/data/Condition/diabetes-typeII",
+        "resource": {
+          "resourceType": "Condition",
+          "id": "diabetes-typeII",
+          "meta": {
+            "versionId": "1",
+            "lastUpdated": "2023-09-27T20:14:13.000+00:00",
+            "source": "#dYxvc38KugRy12at",
+            "profile": [ "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition" ]
+          },
+          "text": {
+            "status": "extensions",
+            "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Narrative</b></p><p><b>id</b>: example</p><p><b>meta</b>: </p><p><b>clinicalStatus</b>: <span title=\"Codes: {http://terminology.hl7.org/CodeSystem/condition-clinical active}\">Active</span></p><p><b>verificationStatus</b>: <span title=\"Codes: {http://terminology.hl7.org/CodeSystem/condition-ver-status confirmed}\">Confirmed</span></p><p><b>category</b>: <span title=\"Codes: {http://terminology.hl7.org/CodeSystem/condition-category problem-list-item}\">Problem</span></p><p><b>code</b>: <span title=\"Codes: {http://hl7.org/fhir/sid/icd-10 E11.9}\">Uncomplicated Diabetes mellitus, type II</span></p><p><b>subject</b>: Brigg Dishman. Generated Summary: Medical Record Number: 1428982; active; Brigg Dishman; ph: 619-555-1469; gender: male; birthDate: 1938-03-22</p><p><b>onset</b>: 2020-08-20</p></div>"
+          },
+          "clinicalStatus": {
+            "coding": [ {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            } ],
+            "text": "Active"
+          },
+          "verificationStatus": {
+            "coding": [ {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            } ],
+            "text": "Confirmed"
+          },
+          "category": [ {
+            "coding": [ {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+              "code": "problem-list-item",
+              "display": "Problem List Item"
+            } ],
+            "text": "Problem List Item"
+          } ],
+          "code": {
+            "coding": [ {
+              "system": "http://hl7.org/fhir/sid/icd-10",
+              "code": "E11.9",
+              "display": "Type 2 diabetes mellitus : Without complications"
+            } ],
+            "text": "Type 2 diabetes mellitus : Without complications"
+          },
+          "subject": {
+            "reference": "Patient/brigg-dishman"
+          },
+          "onsetDateTime": "2020-08-20"
+        }
+      }, {
+        "fullUrl": "https://gw.interop.community/Polk4Saffron/data/Organization/f3e76104-17d9-4ed1-ac35-86ae14ba5d4a",
+        "resource": {
+          "resourceType": "Organization",
+          "id": "f3e76104-17d9-4ed1-ac35-86ae14ba5d4a",
+          "meta": {
+            "versionId": "1",
+            "lastUpdated": "2023-09-29T19:55:09.112+00:00",
+            "profile": [ "http://hl7.org/fhir/us/medmorph/StructureDefinition/us-ph-organization" ]
+          },
+          "identifier": [ {
+            "system": "http://drajer.com",
+            "value": "12345"
+          } ],
+          "active": true,
+          "name": "Test Org 123",
+          "telecom": [ {
+            "system": "email",
+            "value": "+1-777-555-1111",
+            "use": "work"
+          } ],
+          "address": [ {
+            "country": "US"
+          } ]
+        }
+      } ]
+    }
+  }, {
+    "fullUrl": "https://gw.interop.community/Polk4Saffron/data/Organization/f3e76104-17d9-4ed1-ac35-86ae14ba5d4a",
+    "resource": {
+      "resourceType": "Organization",
+      "id": "f3e76104-17d9-4ed1-ac35-86ae14ba5d4a",
+      "meta": {
+        "versionId": "1",
+        "lastUpdated": "2023-09-29T19:55:09.112+00:00",
+        "profile": [ "http://hl7.org/fhir/us/medmorph/StructureDefinition/us-ph-organization" ]
+      },
+      "identifier": [ {
+        "system": "http://drajer.com",
+        "value": "12345"
+      } ],
+      "active": true,
+      "name": "Test Org 123",
+      "telecom": [ {
+        "system": "email",
+        "value": "+1-777-555-1111",
+        "use": "work"
+      } ],
+      "address": [ {
+        "country": "US"
+      } ]
+    }
+  } ]
+}
